@@ -85,6 +85,6 @@ make dist        # build all platforms + archives
 eee remove      # self-deletes binary + config
 ```
 
-## Latest release: v0.4.8
+## Latest release: v0.4.9
 
-Binaries: https://github.com/wildneuro/eee-chat/releases/tag/v0.4.8
+Binaries: https://github.com/wildneuro/eee-chat/releases/tag/v0.4.9
