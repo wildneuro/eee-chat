@@ -64,17 +64,6 @@ eee remove                 uninstall (removes config + binary)
 Same-LAN peers connect instantly via mDNS. Remote peers connect via
 DHT provider records + relay fallback (~30s).
 
-## Build from source
-
-This repo (`wildneuro/eee`) has the Go sources. Prebuilt binaries are
-released to `wildneuro/eee-chat` — see **Install** above.
-
-```
-make build       # build for current platform (local dev)
-make dist        # cross-compile → dist/*.tar.gz for all platforms
-./release.sh     # bump version + dist + push binaries to eee-chat/releases
-```
-
 ## Tech
 
 - Go + [bubbletea](https://github.com/charmbracelet/bubbletea) (TUI)
@@ -88,6 +77,12 @@ make dist        # cross-compile → dist/*.tar.gz for all platforms
 eee remove      # self-deletes binary + config
 ```
 
-## Latest release: v0.4.13
+## Binary distribution
 
-Binaries: https://github.com/wildneuro/eee-chat/releases/tag/v0.4.13
+This repo has no sources. Prebuilt binaries for eee (encrypted P2P chat)
+are published with each release. The source repo is
+[wildneuro/eee](https://github.com/wildneuro/eee).
+
+## Latest release: v0.4.14
+
+Binaries: https://github.com/wildneuro/eee-chat/releases/tag/v0.4.14
