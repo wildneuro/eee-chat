@@ -66,10 +66,13 @@ DHT provider records + relay fallback (~30s).
 
 ## Build from source
 
+This repo (`wildneuro/eee`) has the Go sources. Prebuilt binaries are
+released to `wildneuro/eee-chat` — see **Install** above.
+
 ```
-make build       # build for current platform
-make dist        # build all platforms + archives
-./release.sh     # patch bump release (or: minor, major, vX.Y.Z)
+make build       # build for current platform (local dev)
+make dist        # cross-compile → dist/*.tar.gz for all platforms
+./release.sh     # bump version + dist + push binaries to eee-chat/releases
 ```
 
 ## Tech
@@ -85,6 +88,6 @@ make dist        # build all platforms + archives
 eee remove      # self-deletes binary + config
 ```
 
-## Latest release: v0.4.12
+## Latest release: v0.4.13
 
-Binaries: https://github.com/wildneuro/eee-chat/releases/tag/v0.4.12
+Binaries: https://github.com/wildneuro/eee-chat/releases/tag/v0.4.13
