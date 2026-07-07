@@ -64,6 +64,14 @@ eee remove                 uninstall (removes config + binary)
 Same-LAN peers connect instantly via mDNS. Remote peers connect via
 DHT provider records + relay fallback (~30s).
 
+## Build from source
+
+```
+make build       # build for current platform
+make dist        # build all platforms + archives
+./release.sh     # patch bump release (or: minor, major, vX.Y.Z)
+```
+
 ## Tech
 
 - Go + [bubbletea](https://github.com/charmbracelet/bubbletea) (TUI)
@@ -77,58 +85,6 @@ DHT provider records + relay fallback (~30s).
 eee remove      # self-deletes binary + config
 ```
 
-## How it works
+## Latest release: v0.4.16
 
-eee is an end-to-end encrypted P2P chat and file sharing app with
-no servers, no accounts, and no dependencies.
-
-### Encryption
-
-A shared 64-char hex key (256-bit) is exchanged out-of-band (Signal,
-in person, etc.). Both sides derive an AES-256-GCM session key from
-it. Every message and file chunk is encrypted before leaving your
-machine — the network never sees plaintext.
-
-### Peer discovery
-
-Peers on the same LAN find each other instantly via mDNS. Remote
-peers discover each other through the libp2p DHT (distributed hash
-table) — a provider record keyed by a hash of the shared key.
-libp2p relay and hole-punching handle NAT traversal so you don't
-need port forwarding.
-
-### Transport
-
-Once discovered, peers connect directly over an mplex multiplexed
-stream, with relay fallback when a direct connection isn't possible.
-There is no central server — the network IS the infrastructure.
-
-### Privacy & safety
-
-- **Privacy mode** masks all incoming messages by default. Reveal
-  one word at a time with a keypress — no shoulder-surfing.
-- **Screen recording detection** scans for active recorders (OBS,
-  QuickTime, Zoom, Teams, etc.) and offers to kill them before
-  displaying sensitive content.
-- **File preview** converts images to ASCII art so you can inspect
-  what you're receiving before accepting the file.
-- **Auto-update** checks for new versions on startup and replaces
-  the binary in-place — you always have the latest fixes.
-
-### Why you can trust it
-
-- No servers: there's nothing to intercept or compromise.
-- No accounts: no identity provider, no phone number, no email.
-- No metadata: the DHT only stores a hash of the shared key, not
-  who you are or who you're talking to.
-- Single binary with zero runtime dependencies — supply chain is
-  just the binary you downloaded.
-
-## Binary distribution
-
-This repo has no sources. Prebuilt binaries for eee (encrypted P2P chat)
-are published with each release.
-
-## Latest release: v0.4.15
-
-Binaries: https://github.com/wildneuro/eee-chat/releases/tag/v0.4.15
+Binaries: https://github.com/wildneuro/eee-chat/releases/tag/v0.4.16
